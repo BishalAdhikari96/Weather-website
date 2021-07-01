@@ -5,6 +5,7 @@ const utility = require('./geocode')
 
 console.log(path.join(__dirname, '../public'))
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -96,6 +97,6 @@ app.get('*', (req,res) => {
         message: 'Page not found.'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
